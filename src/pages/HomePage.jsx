@@ -23,11 +23,10 @@ function HomePage({ onNavigate, cart, setCart, products, setProducts}) {
     return (
         <div>
             <h1>Home Page</h1>
-
             <div style={{ marginBottom: '20px', padding: '15px', backgroundColor: '#f0f0f0', borderRadius: '8px' }}>
                 <h2>{message}</h2>
                 <p>This is a demonstration of a multi-page React application.</p>
-
+                
                 <div style={{ marginTop: '15px' }}>
                     <Button onClick={() => onNavigate('products')}>
                         View Products
@@ -35,13 +34,16 @@ function HomePage({ onNavigate, cart, setCart, products, setProducts}) {
                 </div>
             </div>
             {/* only display if cart at has at least one item */}
-            {cart.length > 0 ? (<ShoppingCart cart={cart} setCart={setCart} products = {products} setProducts={setProducts}/>) : (null) } 
+            <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                {cart.length > 0 ? (<ShoppingCart cart={cart} setCart={setCart} products = {products} setProducts={setProducts}/>) : (null) } 
+            </div>
+            
 
             <Counter initialValue={0} onCountChange={handleCountChange} />
 
             <div style={{ marginTop: '30px' }}>
                 <Button
-                    onClick={() => setShowFeatures(!showFeatures)}
+                    // onClick={() => setShowFeatures(!showFeatures)}
                     variant="secondary"
                 >
                     {showFeatures ? 'Hide Features' : 'Show Features'}
@@ -72,7 +74,6 @@ function HomePage({ onNavigate, cart, setCart, products, setProducts}) {
                     </div>
                 )}
             </div>
-            
         </div>
     );
 }

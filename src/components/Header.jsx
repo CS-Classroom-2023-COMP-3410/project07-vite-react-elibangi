@@ -10,6 +10,7 @@ function Header({ currentPage, onNavigate }) {
     const navItems = [
         { id: 'home', label: 'Home' },
         { id: 'products', label: 'Products' },
+        { id : 'cart', label: 'Cart'},
         { id: 'profile', label: 'Profile' }
     ];
 

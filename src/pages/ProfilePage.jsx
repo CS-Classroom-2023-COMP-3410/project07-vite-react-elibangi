@@ -175,7 +175,7 @@ function ProfilePage({ cart, setCart, products, setProducts}) {
                             </div>
                         </div>
                     </div>
-                    <div>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end', gap:'30px'}}>
                         {/* only display if cart at has at least one item */}
                         {cart.length > 0 ? (<ShoppingCart cart={cart} setCart={setCart} products = {products} setProducts={setProducts}/>) : (null) } 
                     </div>

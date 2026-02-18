@@ -3,6 +3,7 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
 import ProfilePage from './pages/ProfilePage';
+import CartPage from './pages/CartPage';
 function App() {
   const [currentPage, setCurrentPage] = useState('home');// Simple navigation state management
   const [cart, setCart] = useState([]);
@@ -54,6 +55,8 @@ function App() {
         return <ProductsPage cart={cart} setCart={setCart} products={products} setProducts={setProducts}/>;
       case 'profile':
         return <ProfilePage cart={cart} setCart={setCart} products={products} setProducts={setProducts}/>;
+      case 'cart':
+        return <CartPage cart={cart} setCart={setCart} products={products} setProducts={setProducts}/>;
       case 'home':
       default:
         return <HomePage onNavigate={handleNavigate} cart={cart} setCart={setCart} products={products} setProducts={setProducts}/>;

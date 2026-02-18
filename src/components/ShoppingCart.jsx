@@ -8,6 +8,9 @@ function ShoppingCart({ cart, setCart, products, setProducts}) {
         (total, item) => total + (item.price * item.quantity),
         0
     );
+
+    // To incl addToCart funct, I would need to rework it to pass down ProductPage's "Add to Cart "button,
+    // but this isn't necessary since the product pg is the only page that actually needs to add items to cart
     
     // Remove product from cart
     const removeFromCart = (productId) => {
